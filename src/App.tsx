@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, MapPin, Calendar, Clock, Send, ChevronDown } from "lucide-react";
 
-const INVITATION = {
+export const INVITATION = {
   couple: {
     bride: "Nisra",
     groom: "Yoosuf",
@@ -186,6 +186,11 @@ function CountdownTimer({ isDark = false }: { isDark?: boolean }) {
 
 
 export default function WeddingInvitation() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestPrefix = urlParams.get('p') || '';
+  const guestName = urlParams.get('n') || '';
+  const hasGuest = guestPrefix || guestName;
+
   const [hasStarted, setHasStarted] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -503,7 +508,14 @@ export default function WeddingInvitation() {
                   <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm">
                     {INVITATION.date.displayLong} · {INVITATION.time.reception}
                   </p>
-                  <p className="text-[#7c4146] text-base md:text-sm font-bold font-serif leading-loose max-w-2xl mx-auto drop-shadow-sm uppercase">
+                  
+                  {hasGuest && (
+                    <p className="mt-8 font-serif text-lg md:text-xl text-[#9d6065] font-bold leading-loose max-w-2xl mx-auto drop-shadow-sm capitalize">
+                      Dear {guestPrefix} {guestName},
+                    </p>
+                  )}
+
+                  <p className="mt-4 text-[#7c4146] text-base md:text-sm font-bold font-serif leading-loose max-w-2xl mx-auto drop-shadow-sm uppercase">
                     REQUEST THE HONOUR OF YOUR KIND PRESENCE TO GRACE THE OCCASION OF THEIR WALEEMA CEREMONY
                   </p>
 
