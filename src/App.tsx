@@ -22,7 +22,7 @@ const INVITATION = {
     name: "Nada Garden",
     city: "Dargatown",
     mapQuery: "Nada Garden, Dargatown",
-    googleMapsLink: "",
+    googleMapsLink: "https://maps.app.goo.gl/JLZaJ1k8i8zLCeaw8",
   },
   rsvpContacts: [
     "RSVP: 077 333910055",
@@ -935,12 +935,14 @@ export default function WeddingInvitation() {
                       transition={{ duration: 1.2, ease: "circOut" }}
                       className="relative w-full aspect-[4/3] md:aspect-video lg:aspect-[4/3] rounded-[3rem] overflow-hidden shadow-[0_80px_150px_-30px_rgba(0,0,0,0.25)] group bg-white"
                     >
-                      {/* Hotel Image */}
-                      <img
-                        src="/WhatsApp Image 2026-06-18 at 00.55.12.jpeg"
-                        alt="Hotel Venue"
-                        className="w-full h-full object-cover transition-all duration-1000 scale-[1.02] group-hover:scale-100"
-                      />
+                      {/* Embedded Google Map */}
+                      <iframe
+                        src="https://maps.google.com/maps?q=Nada%20Garden,%20Dargatown&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        className="w-full h-full object-cover transition-all duration-1000 scale-[1.02] group-hover:scale-100 border-0"
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
 
                       {/* Decorative Frame Overlays */}
                       <div className="absolute inset-0 pointer-events-none border-[15px] md:border-[25px] border-white/95 rounded-[3rem]" />
