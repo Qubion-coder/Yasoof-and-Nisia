@@ -12,7 +12,9 @@ export const INVITATION = {
   date: {
     displayNumeric: "11 . 10 . 2026",
     displayLong: "Sunday, 11 October 2026",
-    countdownTarget: "October 11, 2026 12:00:00",
+    countdownTarget: "October 03, 2026 12:00:00",
+    weddingNumeric: "03 . 10 . 2026",
+    weddingLong: "Saturday, 03 October 2026",
   },
   time: {
     ceremony: "12:00 PM onwards",
@@ -495,7 +497,7 @@ export default function WeddingInvitation() {
                     />
                   </div>
                   <p className="mt-4 font-serif text-base md:text-sm text-[#9d6065]/80 leading-loose max-w-xl mx-auto px-4">
-                    "In the name of Allah, the most compassionate, the most merciful, whose blessings unite hearts and families."
+                    "In the name of Allah, the Most Gracious, the Most Merciful."
                   </p>
                 </motion.div>
 
@@ -505,8 +507,8 @@ export default function WeddingInvitation() {
                   transition={{ delay: 0.35, duration: 0.8 }}
                   className="mt-12 space-y-5"
                 >
-                  <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm">
-                    {INVITATION.date.displayLong} · {INVITATION.time.reception}
+                  <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm leading-relaxed">
+                    Wedding: {INVITATION.date.weddingLong} <br className="md:hidden" /> <span className="hidden md:inline">·</span> Waleema: {INVITATION.date.displayLong}
                   </p>
                   
                   {hasGuest && (
@@ -656,7 +658,9 @@ export default function WeddingInvitation() {
                           <Calendar className="w-4 h-4 text-[#bd8186]" />
                         </div>
                         <div>
-                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Date</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Date</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-2">{INVITATION.date.weddingLong}</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Date</div>
                           <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.date.displayLong}</div>
                         </div>
                       </div>
@@ -721,7 +725,9 @@ export default function WeddingInvitation() {
                         <Calendar className="w-4 h-4 text-[#bd8186]" />
                       </div>
                       <div>
-                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Date</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Date</div>
+                        <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-3">{INVITATION.date.weddingLong}</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Date</div>
                         <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.date.displayLong}</div>
                       </div>
                     </div>
