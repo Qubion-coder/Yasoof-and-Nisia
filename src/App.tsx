@@ -30,7 +30,7 @@ const INVITATION = {
 } as const;
 
 const backgroundMusic = "/Wedding Nasheed - Muhammad Al Muqit.mp3";
-const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxnSFSaqtaiB8PEwXS-CWSCzsdt3D_c7o-8KK33X9q-B45I4IBtU30ZjiNUZgK4qb8n/exec";
+const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzv8xwTr5Jen6xIRCBVxtIqEHAwCts3xtppTGPQH4CcsUbrW775VfMCWllfojx-qZop2g/exec";
 
 const publicImagePath = (fileName: string) => `/images/${fileName.replaceAll(" ", "%20")}`;
 
