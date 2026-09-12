@@ -569,10 +569,10 @@ export default function WeddingInvitation() {
                       "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
                     </p>
                     <p className="text-[#9d6065] text-lg md:text-xl leading-[2]" dir="rtl" style={{ fontFamily: 'Amiri, serif' }}>
-                      فِي الدُّنْيَا وَالْآخِرَةِ
+                      بَارَكَ اللهُ لَكُمَا، وَبَارَكَ عَلَيْكُمَا، وَجَمَعَ بَيْنَكُمَا فِي خَيْر
                     </p>
                     <p className="font-serif text-base md:text-xs text-[#9d6065]/80 leading-loose">
-                      "May our love, faith, and companionship flourish in this world and the Hereafter"
+                      "May Allah bless you both, shower His blessings upon you, and unite you both in goodness."
                     </p>
                   </div>
 
