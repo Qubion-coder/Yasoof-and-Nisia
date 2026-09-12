@@ -563,10 +563,10 @@ export default function WeddingInvitation() {
 
                   <div className="flex flex-col items-center justify-center gap-6 mb-16 max-w-3xl text-center px-4">
                     <p className="text-[#9d6065] text-xl md:text-2xl leading-[1.6] md:leading-[2]" dir="rtl" style={{ fontFamily: 'Amiri, serif' }}>
-                      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+                      رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ
                     </p>
                     <p className="font-serif text-base md:text-xs text-[#9d6065]/80 leading-loose">
-                      "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
+                      "Our Lord, grant us from our spouses and offspring comfort to our eyes."
                     </p>
                     <p className="text-[#9d6065] text-lg md:text-xl leading-[2]" dir="rtl" style={{ fontFamily: 'Amiri, serif' }}>
                       بَارَكَ اللهُ لَكُمَا، وَبَارَكَ عَلَيْكُمَا، وَجَمَعَ بَيْنَكُمَا فِي خَيْر
