@@ -885,7 +885,7 @@ export default function WeddingInvitation() {
                   </div>
 
                   <h2 className="font-cinzel text-4xl sm:text-5xl md:text-8xl lg:text-9xl bg-gradient-to-br from-[#bd8186] to-[#824d52] bg-clip-text text-transparent leading-tight font-light uppercase tracking-tight relative break-words">
-                    {INVITATION.venue.name.split(" ")[0].toUpperCase()} <span className="block md:inline font-playball normal-case text-3xl sm:text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-[#9d6065] to-[#bd8186] bg-clip-text text-transparent md:-ml-8 relative z-10 translate-y-4 md:translate-y-0 italic drop-shadow-sm">{INVITATION.venue.name.split(" ").slice(1).join(" ")}</span>
+                    {currentVenue.name.split(" ")[0].toUpperCase()} <span className="block md:inline font-playball normal-case text-3xl sm:text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-[#9d6065] to-[#bd8186] bg-clip-text text-transparent md:-ml-8 relative z-10 translate-y-4 md:translate-y-0 italic drop-shadow-sm">{currentVenue.name.split(" ").slice(1).join(" ")}</span>
                   </h2>
 
                   <div className="max-w-xl mx-auto pt-10 relative">
