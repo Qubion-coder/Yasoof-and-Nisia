@@ -10,19 +10,19 @@ const INVITATION = {
     groomFull: "Yoosuf",
   },
   date: {
-    displayNumeric: "03 . 10 . 2026",
-    displayLong: "Saturday, 03 October 2026",
-    countdownTarget: "October 03, 2026 12:00:00",
+    displayNumeric: "11 . 10 . 2026",
+    displayLong: "Sunday, 11 October 2026",
+    countdownTarget: "October 11, 2026 12:00:00",
   },
   time: {
     ceremony: "12:00 PM onwards",
     reception: "12:00 PM onwards",
   },
   venue: {
-    name: "Nada Garden",
-    city: "Dargatown",
-    mapQuery: "Nada Garden, Dargatown",
-    googleMapsLink: "https://maps.app.goo.gl/JLZaJ1k8i8zLCeaw8",
+    name: "Paris Garden Reception Hall",
+    city: "Pussellawa",
+    mapQuery: "Paris Garden Reception Hall, Pussellawa",
+    googleMapsLink: "https://maps.app.goo.gl/5DcmTeBdoD2phSr67",
   },
   rsvpContacts: [
     "RSVP: 077 333910055",
@@ -937,7 +937,7 @@ export default function WeddingInvitation() {
                     >
                       {/* Embedded Google Map */}
                       <iframe
-                        src="https://maps.google.com/maps?q=Nada%20Garden,%20Dargatown&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Paris%20Garden%20Reception%20Hall,%20Pussellawa&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         className="w-full h-full object-cover transition-all duration-1000 scale-[1.02] group-hover:scale-100 border-0"
                         allowFullScreen
                         loading="lazy"
