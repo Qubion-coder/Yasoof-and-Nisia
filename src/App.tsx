@@ -710,7 +710,7 @@ export default function WeddingInvitation() {
                   </div>
                   <h2 className="font-playball text-5xl md:text-7xl bg-gradient-to-r from-[#bd8186] via-[#9d6065] to-[#bd8186] bg-clip-text text-transparent leading-none drop-shadow-sm italic">Schedule</h2>
                   <p className="text-[#9d6065]/70 text-xs md:text-sm tracking-[0.3em] font-medium uppercase font-cinzel max-w-2xl mx-auto pt-2 leading-loose">
-                    A simple outline of the celebration.
+                    A JOYOUS CELEBRATION OF LOVE & BLESSINGS.
                   </p>
                 </motion.div>
 
