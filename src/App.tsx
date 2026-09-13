@@ -10,8 +10,8 @@ export const INVITATION = {
     groomFull: "Yoosuf",
   },
   date: {
-    displayNumeric: "11 . 10 . 2026",
-    displayLong: "Sunday, 11 October 2026",
+    displayNumeric: "10 . 10 . 2026",
+    displayLong: "Saturday, 10 October 2026",
     countdownTarget: "October 03, 2026 12:00:00",
     weddingNumeric: "03 . 10 . 2026",
     weddingLong: "Saturday, 03 October 2026",
@@ -624,7 +624,7 @@ export default function WeddingInvitation() {
                   </div>
                 </motion.div>
 
-                  <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Waleema Ceremony</h2>
+                  <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Wedding Ceremony</h2>
 
 
 
