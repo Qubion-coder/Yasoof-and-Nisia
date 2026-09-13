@@ -12,17 +12,25 @@ export const INVITATION = {
   date: {
     displayNumeric: "11 . 10 . 2026",
     displayLong: "Sunday, 11 October 2026",
-    countdownTarget: "October 11, 2026 12:00:00",
+    countdownTarget: "October 03, 2026 12:00:00",
+    weddingNumeric: "03 . 10 . 2026",
+    weddingLong: "Saturday, 03 October 2026",
   },
   time: {
     ceremony: "12:00 PM onwards",
     reception: "12:00 PM onwards",
   },
-  venue: {
+  weddingVenue: {
     name: "Nada Garden",
     city: "Dargatown",
     mapQuery: "Nada Garden, Dargatown",
     googleMapsLink: "https://maps.app.goo.gl/JLZaJ1k8i8zLCeaw8",
+  },
+  waleemaVenue: {
+    name: "Paris Reception Hall",
+    city: "Pussellawa",
+    mapQuery: "Paris Reception Hall, Pussellawa",
+    googleMapsLink: "https://maps.app.goo.gl/5DcmTeBdoD2phSr67",
   },
   rsvpContacts: [
     "RSVP: 077 333910055",
@@ -190,6 +198,9 @@ export default function WeddingInvitation() {
   const guestPrefix = urlParams.get('p') || '';
   const guestName = urlParams.get('n') || '';
   const hasGuest = guestPrefix || guestName;
+
+  const [activeVenue, setActiveVenue] = useState<"wedding" | "waleema">("wedding");
+  const currentVenue = activeVenue === "wedding" ? INVITATION.weddingVenue : INVITATION.waleemaVenue;
 
   const [hasStarted, setHasStarted] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
@@ -505,10 +516,10 @@ export default function WeddingInvitation() {
                   transition={{ delay: 0.35, duration: 0.8 }}
                   className="mt-12 space-y-5"
                 >
-                  <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm">
-                    {INVITATION.date.displayLong} · {INVITATION.time.reception}
+                  <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm leading-relaxed">
+                    {INVITATION.date.weddingLong} · {INVITATION.time.reception}
                   </p>
-
+                  
                   {hasGuest && (
                     <p className="mt-8 font-serif text-lg md:text-xl text-[#9d6065] font-bold leading-loose max-w-2xl mx-auto drop-shadow-sm capitalize">
                       Dear {guestPrefix} {guestName},
@@ -613,7 +624,7 @@ export default function WeddingInvitation() {
                   </div>
                 </motion.div>
 
-                <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Wedding Ceremony</h2>
+                  <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Wedding Ceremony</h2>
 
 
 
@@ -656,8 +667,10 @@ export default function WeddingInvitation() {
                           <Calendar className="w-4 h-4 text-[#bd8186]" />
                         </div>
                         <div>
-                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Date</div>
-                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">Saturday, 03 October 2026</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Date</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-2">{INVITATION.date.weddingLong}</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Date</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.date.displayLong}</div>
                         </div>
                       </div>
 
@@ -676,8 +689,10 @@ export default function WeddingInvitation() {
                           <MapPin className="w-4 h-4 text-[#bd8186]" />
                         </div>
                         <div>
-                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Venue</div>
-                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.venue.name}, {INVITATION.venue.city}</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Venue</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-2">{INVITATION.weddingVenue.name}, {INVITATION.weddingVenue.city}</div>
+                          <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Venue</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.waleemaVenue.name}, {INVITATION.waleemaVenue.city}</div>
                         </div>
                       </div>
                     </div>
@@ -708,7 +723,7 @@ export default function WeddingInvitation() {
                     <span className="text-[#9d6065] font-bold uppercase tracking-[0.6em] text-[10px] md:text-xs opacity-50">THE DAY</span>
                     <div className="h-px w-16 bg-[#bd8186]/30" />
                   </div>
-                  <h2 className="font-playball text-5xl md:text-7xl bg-gradient-to-r from-[#bd8186] via-[#9d6065] to-[#bd8186] bg-clip-text text-transparent leading-none drop-shadow-sm italic">Waleema</h2>
+                  <h2 className="font-playball text-5xl md:text-7xl bg-gradient-to-r from-[#bd8186] via-[#9d6065] to-[#bd8186] bg-clip-text text-transparent leading-none drop-shadow-sm italic">Schedule</h2>
                   <p className="text-[#9d6065]/70 text-xs md:text-sm tracking-[0.3em] font-medium uppercase font-cinzel max-w-2xl mx-auto pt-2 leading-loose">
                     A JOYOUS CELEBRATION OF LOVE & BLESSINGS.
                   </p>
@@ -721,7 +736,9 @@ export default function WeddingInvitation() {
                         <Calendar className="w-4 h-4 text-[#bd8186]" />
                       </div>
                       <div>
-                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Date</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Date</div>
+                        <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-3">{INVITATION.date.weddingLong}</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Date</div>
                         <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.date.displayLong}</div>
                       </div>
                     </div>
@@ -741,8 +758,10 @@ export default function WeddingInvitation() {
                         <MapPin className="w-4 h-4 text-[#bd8186]" />
                       </div>
                       <div>
-                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Venue</div>
-                        <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.venue.name}, {INVITATION.venue.city}</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Wedding Venue</div>
+                        <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold mb-3">{INVITATION.weddingVenue.name}, {INVITATION.weddingVenue.city}</div>
+                        <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Waleema Venue</div>
+                        <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.waleemaVenue.name}, {INVITATION.waleemaVenue.city}</div>
                       </div>
                     </div>
                   </div>
@@ -866,7 +885,7 @@ export default function WeddingInvitation() {
                   </div>
 
                   <h2 className="font-cinzel text-4xl sm:text-5xl md:text-8xl lg:text-9xl bg-gradient-to-br from-[#bd8186] to-[#824d52] bg-clip-text text-transparent leading-tight font-light uppercase tracking-tight relative break-words">
-                    {INVITATION.venue.name.split(" ")[0].toUpperCase()} <span className="block md:inline font-playball normal-case text-3xl sm:text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-[#9d6065] to-[#bd8186] bg-clip-text text-transparent md:-ml-8 relative z-10 translate-y-4 md:translate-y-0 italic drop-shadow-sm">{INVITATION.venue.name.split(" ").slice(1).join(" ")}</span>
+                    {currentVenue.name.split(" ")[0].toUpperCase()} <span className="block md:inline font-playball normal-case text-3xl sm:text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-[#9d6065] to-[#bd8186] bg-clip-text text-transparent md:-ml-8 relative z-10 translate-y-4 md:translate-y-0 italic drop-shadow-sm">{currentVenue.name.split(" ").slice(1).join(" ")}</span>
                   </h2>
 
                   <div className="max-w-xl mx-auto pt-10 relative">
@@ -898,6 +917,21 @@ export default function WeddingInvitation() {
                           <div className="h-0.5 w-12 bg-[#eedadb]/60 mx-auto lg:ml-0" />
                         </div>
 
+                        <div className="flex items-center gap-4 mb-2">
+                          <button 
+                            onClick={() => setActiveVenue("wedding")}
+                            className={`px-5 py-2 rounded-full font-bold uppercase tracking-widest text-[10px] transition-colors ${activeVenue === 'wedding' ? 'bg-[#9d6065] text-white' : 'bg-transparent text-[#9d6065] border border-[#9d6065]'}`}
+                          >
+                            Wedding
+                          </button>
+                          <button 
+                            onClick={() => setActiveVenue("waleema")}
+                            className={`px-5 py-2 rounded-full font-bold uppercase tracking-widest text-[10px] transition-colors ${activeVenue === 'waleema' ? 'bg-[#9d6065] text-white' : 'bg-transparent text-[#9d6065] border border-[#9d6065]'}`}
+                          >
+                            Waleema
+                          </button>
+                        </div>
+
                         <div className="space-y-10">
                           <div className="flex items-start gap-8">
                             <div className="w-12 h-12 rounded-full border border-[#bd8186]/20 flex items-center justify-center shrink-0">
@@ -906,7 +940,7 @@ export default function WeddingInvitation() {
                             <div className="space-y-3">
                               <h4 className="text-[#9d6065]/40 font-bold text-[10px] uppercase tracking-[0.5em] font-cinzel">The Destination</h4>
                               <p className="text-xl md:text-2xl text-[#9d6065] font-cinzel leading-relaxed tracking-wide font-bold">
-                                {INVITATION.venue.name}, {INVITATION.venue.city}
+                                {currentVenue.name}, {currentVenue.city}
                               </p>
                             </div>
                           </div>
@@ -916,7 +950,7 @@ export default function WeddingInvitation() {
                               <Clock className="w-5 h-5 text-[#bd8186]" />
                             </div>
                             <div className="space-y-1">
-                              <h4 className="text-[#9d6065]/40 font-bold text-[10px] uppercase tracking-[0.5em] font-cinzel">Wedding Ceremony</h4>
+                              <h4 className="text-[#9d6065]/40 font-bold text-[10px] uppercase tracking-[0.5em] font-cinzel">The Time</h4>
                               <p className="text-xl md:text-2xl text-[#9d6065] font-cinzel leading-relaxed tracking-wide font-bold">
                                 {INVITATION.time.reception}
                               </p>
@@ -925,7 +959,7 @@ export default function WeddingInvitation() {
                         </div>
 
                         <button
-                          onClick={() => window.open(INVITATION.venue.googleMapsLink, "_blank")}
+                          onClick={() => window.open(currentVenue.googleMapsLink, "_blank")}
                           className="w-full group relative inline-flex items-center justify-center gap-4 py-6 bg-[#9d6065] text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] overflow-hidden transition-all hover:bg-black shadow-xl mt-4"
                         >
                           <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700" />
@@ -949,7 +983,8 @@ export default function WeddingInvitation() {
                     >
                       {/* Embedded Google Map */}
                       <iframe
-                        src="https://maps.google.com/maps?q=Paris%20Garden%20Reception%20Hall,%20Pussellawa&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        key={activeVenue}
+                        src={`https://maps.google.com/maps?q=${encodeURIComponent(currentVenue.mapQuery)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
                         className="w-full h-full object-cover transition-all duration-1000 scale-[1.02] group-hover:scale-100 border-0"
                         allowFullScreen
                         loading="lazy"
@@ -979,7 +1014,7 @@ export default function WeddingInvitation() {
                       className="inline-flex items-center gap-4 mt-8 px-8 py-3 bg-white border border-[#eedadb]/40 shadow-lg rounded-full"
                     >
                       <Sparkles className="w-4 h-4 text-[#bd8186]" />
-                      <span className="text-[10px] md:text-xs font-bold text-[#9d6065] uppercase tracking-widest">{INVITATION.venue.city}</span>
+                      <span className="text-[10px] md:text-xs font-bold text-[#9d6065] uppercase tracking-widest">{currentVenue.city}</span>
                     </motion.div>
                   </div>
                 </div>
@@ -1036,10 +1071,11 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "1" }));
                           }}
                           aria-pressed={rsvpForm.guests !== "0"}
-                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${rsvpForm.guests !== "0"
+                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
+                            rsvpForm.guests !== "0"
                               ? "bg-[#9d6065] text-white shadow-md font-bold"
                               : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 shadow-sm"
-                            }`}
+                          }`}
                         >
                           Yes, I'll be there!
                         </button>
@@ -1051,10 +1087,11 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "0" }));
                           }}
                           aria-pressed={rsvpForm.guests === "0"}
-                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${rsvpForm.guests === "0"
+                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
+                            rsvpForm.guests === "0"
                               ? "bg-[#9d6065] text-white shadow-md font-bold"
                               : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 shadow-sm"
-                            }`}
+                          }`}
                         >
                           Sadly I can't attend, but you're in my heart
                         </button>
