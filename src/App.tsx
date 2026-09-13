@@ -518,7 +518,6 @@ export default function WeddingInvitation() {
                   <p className="mt-4 text-[#7c4146] text-base md:text-sm font-bold font-serif leading-loose max-w-2xl mx-auto drop-shadow-sm uppercase">
                     REQUEST THE HONOUR OF YOUR KIND PRESENCE TO GRACE THE OCCASION OF THEIR WEDDING CEREMONY
                   </p>
-                </motion.div>
 
                   <a
                     href="#details"
