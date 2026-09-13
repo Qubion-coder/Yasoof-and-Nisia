@@ -508,7 +508,7 @@ export default function WeddingInvitation() {
                   <p className="font-cinzel text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#7c4146] drop-shadow-sm">
                     {INVITATION.date.displayLong} · {INVITATION.time.reception}
                   </p>
-                  
+
                   {hasGuest && (
                     <p className="mt-8 font-serif text-lg md:text-xl text-[#9d6065] font-bold leading-loose max-w-2xl mx-auto drop-shadow-sm capitalize">
                       Dear {guestPrefix} {guestName},
@@ -613,7 +613,7 @@ export default function WeddingInvitation() {
                   </div>
                 </motion.div>
 
-                  <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Wedding Ceremony</h2>
+                <h2 className="font-cinzel text-xl md:text-2xl text-[#bd8186] tracking-[0.5em] font-bold uppercase">Wedding Ceremony</h2>
 
 
 
@@ -657,7 +657,7 @@ export default function WeddingInvitation() {
                         </div>
                         <div>
                           <div className="text-[9px] uppercase tracking-[0.5em] font-bold text-[#9d6065]/40 font-cinzel">Date</div>
-                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">{INVITATION.date.displayLong}</div>
+                          <div className="text-sm md:text-base text-[#9d6065] font-cinzel tracking-wide font-bold">Saturday, 03 October 2026</div>
                         </div>
                       </div>
 
@@ -708,7 +708,7 @@ export default function WeddingInvitation() {
                     <span className="text-[#9d6065] font-bold uppercase tracking-[0.6em] text-[10px] md:text-xs opacity-50">THE DAY</span>
                     <div className="h-px w-16 bg-[#bd8186]/30" />
                   </div>
-                  <h2 className="font-playball text-5xl md:text-7xl bg-gradient-to-r from-[#bd8186] via-[#9d6065] to-[#bd8186] bg-clip-text text-transparent leading-none drop-shadow-sm italic">Schedule</h2>
+                  <h2 className="font-playball text-5xl md:text-7xl bg-gradient-to-r from-[#bd8186] via-[#9d6065] to-[#bd8186] bg-clip-text text-transparent leading-none drop-shadow-sm italic">Waleema</h2>
                   <p className="text-[#9d6065]/70 text-xs md:text-sm tracking-[0.3em] font-medium uppercase font-cinzel max-w-2xl mx-auto pt-2 leading-loose">
                     A JOYOUS CELEBRATION OF LOVE & BLESSINGS.
                   </p>
@@ -1036,11 +1036,10 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "1" }));
                           }}
                           aria-pressed={rsvpForm.guests !== "0"}
-                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
-                            rsvpForm.guests !== "0"
+                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${rsvpForm.guests !== "0"
                               ? "bg-[#9d6065] text-white shadow-md font-bold"
                               : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 shadow-sm"
-                          }`}
+                            }`}
                         >
                           Yes, I'll be there!
                         </button>
@@ -1052,11 +1051,10 @@ export default function WeddingInvitation() {
                             setRsvpForm((prev) => ({ ...prev, guests: "0" }));
                           }}
                           aria-pressed={rsvpForm.guests === "0"}
-                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${
-                            rsvpForm.guests === "0"
+                          className={`w-full py-5 md:py-6 rounded-xl font-cinzel text-[11px] md:text-sm tracking-wide transition-all flex items-center justify-center px-4 leading-relaxed active:scale-[0.98] ${rsvpForm.guests === "0"
                               ? "bg-[#9d6065] text-white shadow-md font-bold"
                               : "bg-[#f3f3f3] hover:bg-slate-200 text-slate-700 shadow-sm"
-                          }`}
+                            }`}
                         >
                           Sadly I can't attend, but you're in my heart
                         </button>
